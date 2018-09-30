@@ -3,6 +3,7 @@ package com.viger.myplayer.base
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import org.jetbrains.anko.AnkoLogger
+import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.toast
 
 abstract class BaseActivity : AppCompatActivity(),AnkoLogger {
@@ -14,11 +15,11 @@ abstract class BaseActivity : AppCompatActivity(),AnkoLogger {
         initData()
     }
 
-    protected fun initData() {
+    open protected fun initData() {
 
     }
 
-    protected fun initListener() {
+    open protected fun initListener() {
 
     }
 
@@ -29,5 +30,11 @@ abstract class BaseActivity : AppCompatActivity(),AnkoLogger {
             toast(msg)
         }
     }
+
+    inline fun <reified T:BaseActivity> startActivityAndFinish() {
+        startActivity(intentFor<T>())
+        finish()
+    }
+
 
 }
