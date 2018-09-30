@@ -1,7 +1,8 @@
-package com.viger.myplayer
+package com.viger.myplayer.ui.activity
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
+import com.viger.myplayer.R
 
 class MainActivity : AppCompatActivity() {
 
