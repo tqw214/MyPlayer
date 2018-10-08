@@ -18,7 +18,7 @@ class SplashActivity: BaseActivity(), ViewPropertyAnimatorListener {
     }
 
     override fun onAnimationEnd(p0: View?) {
-        //进入主界面
+        //进入主界面activity
 //        startActivity(intentFor<MainActivity>())
 //        finish()
         startActivityAndFinish<MainActivity>()
