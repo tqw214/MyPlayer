@@ -1,6 +1,7 @@
 package com.viger.myplayer.util
 
-import android.widget.Toolbar
+import android.support.v7.widget.Toolbar
+import com.viger.myplayer.R
 
 interface ToolBarManager {
 
@@ -8,6 +9,7 @@ interface ToolBarManager {
 
     fun initMainToolBar() {
         toolbar.setTitle("我的影音")
+        toolbar.inflateMenu(R.menu.main)
     }
 
 }
