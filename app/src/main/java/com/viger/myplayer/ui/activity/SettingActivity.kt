@@ -1,5 +1,6 @@
 package com.viger.myplayer.ui.activity
 
+import android.preference.PreferenceManager
 import android.support.v7.widget.Toolbar
 import com.viger.myplayer.R
 import com.viger.myplayer.base.BaseActivity
@@ -20,6 +21,11 @@ class SettingActivity : BaseActivity(), ToolBarManager {
     override fun initData() {
         super.initData()
         initSettingToolbar()
+        //判断推动通知有没有选中
+        val sp = PreferenceManager.getDefaultSharedPreferences(this)
+        sp.getBoolean("push", false)
+
+
     }
 
 }
