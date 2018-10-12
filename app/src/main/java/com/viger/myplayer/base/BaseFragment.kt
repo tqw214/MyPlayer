@@ -31,11 +31,11 @@ abstract class BaseFragment: Fragment() {
         initData()
     }
 
-    protected fun initData() {
+    open protected fun initData() {
 
     }
 
-    protected fun initListener() {
+    open protected fun initListener() {
 
     }
 

@@ -1,19 +1,26 @@
 package com.viger.myplayer.ui.fragment
 
-import android.graphics.Color
-import android.view.Gravity
+import android.support.v7.widget.LinearLayoutManager
 import android.view.View
-import android.widget.TextView
+import com.viger.myplayer.R
 import com.viger.myplayer.base.BaseFragment
+import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : BaseFragment() {
 
     override fun initView(): View? {
-        val tv = TextView(context)
-        tv.gravity = Gravity.CENTER
-        tv.setTextColor(Color.RED)
-        tv.text = javaClass.simpleName
-        return tv
+        return View.inflate(context, R.layout.fragment_home, null)
+    }
+
+    override fun initData() {
+        super.initData()
+        recycleView.layoutManager = LinearLayoutManager(this.context)
+
+    }
+
+    override fun initListener() {
+        super.initListener()
+
     }
 
 }
