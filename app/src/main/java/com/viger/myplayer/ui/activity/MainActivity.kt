@@ -1,10 +1,12 @@
 package com.viger.myplayer.ui.activity
 
 import android.support.v7.widget.Toolbar
+import com.roughike.bottombar.BottomBar
 import com.viger.myplayer.R
 import com.viger.myplayer.base.BaseActivity
 import com.viger.myplayer.util.ToolBarManager
 import org.jetbrains.anko.find
+import org.jetbrains.anko.toast
 
 class MainActivity : BaseActivity(), ToolBarManager {
 
@@ -20,5 +22,15 @@ class MainActivity : BaseActivity(), ToolBarManager {
         initMainToolBar()
     }
 
+    override fun initListener() {
+        find<BottomBar>(R.id.bottomBar).setOnTabSelectListener {
+            if(it == R.id.tab_home) {
+                toast("首页")
+            }
+            if(it == R.id.tab_mv) {
+                toast("mv")
+            }
+        }
+    }
 
 }
