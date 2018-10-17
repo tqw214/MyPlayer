@@ -1,7 +1,11 @@
 package com.viger.myplayer;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FilenameFilter;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
@@ -17,8 +21,9 @@ public class Test01 {
 
     }
 
-    private void test() {
+    private void test() throws IOException {
         File srcDir = new File("java");
+        File destDir = new File("text");
         File[] list = srcDir.listFiles(new FilenameFilter() {
             @Override
             public boolean accept(File dir, String name) {
@@ -27,6 +32,17 @@ public class Test01 {
         });
         System.out.print(Arrays.toString(list));
         //
+        for(File file : list) {
+            FileInputStream input = new FileInputStream(file);
+            OutputStream out = new FileOutputStream(new File(destDir, file.getName()));
+            byte[] buffer = new byte[1024];
+            int length = -1;
+            while ((length=input.read(buffer)) != -1) {
+                out.write(buffer, 0, length);
+            }
+            out.close();
+            input.close();
+        }
 
 
     }
