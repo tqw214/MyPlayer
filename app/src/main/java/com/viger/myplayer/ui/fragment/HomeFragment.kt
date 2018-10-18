@@ -22,10 +22,14 @@ class HomeFragment : BaseFragment() {
 
     override fun initData() {
         super.initData()
-
+        loadDatas()
 
     }
 
+    private fun loadDatas() {
+        //加载数据
+
+    }
 
 
 }
