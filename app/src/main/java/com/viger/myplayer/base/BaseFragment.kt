@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import org.jetbrains.anko.support.v4.runOnUiThread
 import org.jetbrains.anko.support.v4.toast
 
+/**
+ * baseFragment
+ */
 abstract class BaseFragment: Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
