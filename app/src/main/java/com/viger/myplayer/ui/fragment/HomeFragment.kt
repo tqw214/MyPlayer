@@ -1,5 +1,6 @@
 package com.viger.myplayer.ui.fragment
 
+import android.graphics.Color
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.google.gson.Gson
@@ -32,6 +33,8 @@ class HomeFragment : BaseFragment() {
         recycleView.layoutManager = LinearLayoutManager(this.context)
         //val adapter = HomeAdapter()
         recycleView.adapter = adapter
+        refreshLayout.setColorSchemeColors(Color.RED, Color.YELLOW, Color.GREEN)
+
     }
 
     override fun initData() {
