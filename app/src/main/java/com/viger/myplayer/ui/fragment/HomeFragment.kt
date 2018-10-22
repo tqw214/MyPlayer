@@ -14,6 +14,9 @@ import kotlinx.android.synthetic.main.fragment_home.*
 import okhttp3.*
 import java.io.IOException
 
+/**
+ * HomeFragment
+ */
 class HomeFragment : BaseFragment() {
 
     val adapter by lazy {
