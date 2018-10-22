@@ -34,13 +34,14 @@ class HomeFragment : BaseFragment() {
         //val adapter = HomeAdapter()
         recycleView.adapter = adapter
         refreshLayout.setColorSchemeColors(Color.RED, Color.YELLOW, Color.GREEN)
-
+        refreshLayout.setOnRefreshListener {
+            loadDatas()
+        }
     }
 
     override fun initData() {
         super.initData()
         loadDatas()
-
     }
 
     private fun loadDatas() {
@@ -54,8 +55,18 @@ class HomeFragment : BaseFragment() {
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
                 myToast("获取数据失败")
+                ThreadUtil.runOnMainThread(object :  Runnable{
+                    override fun run() {
+                        refreshLayout.isRefreshing = false
+                    }
+                })
             }
             override fun onResponse(call: Call, response: Response) {
+                ThreadUtil.runOnMainThread(object :  Runnable{
+                    override fun run() {
+                        refreshLayout.isRefreshing = false
+                    }
+                })
                 myToast("获取数据成功")
                 val result = response.body()?.string()
                 val gson = Gson()
