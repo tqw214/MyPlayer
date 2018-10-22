@@ -24,8 +24,10 @@ class HomeAdapter: RecyclerView.Adapter<HomeAdapter.HomeHolder>() {
         return list.size
     }
 
-    override fun onBindViewHolder(p0: HomeHolder, p1: Int) {
-
+    override fun onBindViewHolder(holder: HomeHolder, position: Int) {
+        val data = list.get(position)
+        val itemView = holder.itemView as HomeItemView
+        itemView.setData(data)
     }
 
     class HomeHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
