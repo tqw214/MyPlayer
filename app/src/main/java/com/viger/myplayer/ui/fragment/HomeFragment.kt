@@ -63,7 +63,7 @@ class HomeFragment : BaseFragment(), HomeView {
         presenter.loadDatas()
     }
 
-    override fun onError(message: String) {
+    override fun onError(message: String?) {
         myToast("加载数据失败")
     }
 
