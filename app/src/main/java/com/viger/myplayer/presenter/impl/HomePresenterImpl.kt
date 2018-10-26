@@ -7,7 +7,6 @@ import com.viger.myplayer.presenter.interf.HomePresenter
 import com.viger.myplayer.util.ThreadUtil
 import com.viger.myplayer.util.URLProviderUtils
 import com.viger.myplayer.view.HomeView
-import kotlinx.android.synthetic.main.fragment_home.*
 import okhttp3.*
 import java.io.IOException
 
