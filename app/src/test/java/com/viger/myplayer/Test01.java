@@ -6,6 +6,8 @@ import java.io.FileOutputStream;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
@@ -45,6 +47,16 @@ public class Test01 {
         }
 
 
+    }
+
+    //获取传递的泛型类型
+    public Class getBaseProtocol() {
+        Class c = this.getClass();
+        Type type = c.getGenericSuperclass();
+        ParameterizedType ptype = (ParameterizedType)type;
+        Type[] types = ptype.getActualTypeArguments();
+        Class clazz  = (Class) types[0];
+        return clazz;
     }
 
 }
