@@ -4,12 +4,11 @@ import com.itheima.player.model.bean.HomeItemBean
 import com.viger.myplayer.net.HomeRequest
 import com.viger.myplayer.net.ResponseHandler
 import com.viger.myplayer.presenter.interf.HomePresenter
+import com.viger.myplayer.presenter.interf.HomePresenter.Companion.TYPE_INIT_OR_REFRESH
+import com.viger.myplayer.presenter.interf.HomePresenter.Companion.TYPE_LOAD_MORE
 import com.viger.myplayer.view.HomeView
 
 class HomePresenterImpl(var homeView:HomeView): HomePresenter, ResponseHandler<List<HomeItemBean>> {
-
-    val TYPE_INIT_OR_REFRESH = 1
-    val TYPE_LOAD_MORE = 2
 
     override fun onError(type: Int, msg: String?) {
         homeView.onError(msg)
@@ -17,8 +16,8 @@ class HomePresenterImpl(var homeView:HomeView): HomePresenter, ResponseHandler<L
 
     override fun onSuccess(type: Int, result: List<HomeItemBean>) {
         when (type) {
-            TYPE_INIT_OR_REFRESH->homeView.loadSuccess(result)
-            TYPE_LOAD_MORE->homeView.loadMore(result)
+            HomePresenter.TYPE_INIT_OR_REFRESH->homeView.loadSuccess(result)
+            HomePresenter.TYPE_LOAD_MORE->homeView.loadMore(result)
         }
     }
 
