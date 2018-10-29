@@ -46,7 +46,6 @@ public class Test01 {
             input.close();
         }
 
-
     }
 
     //获取传递的泛型类型
