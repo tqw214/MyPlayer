@@ -8,16 +8,23 @@ import com.viger.myplayer.presenter.interf.HomePresenter.Companion.TYPE_INIT_OR_
 import com.viger.myplayer.presenter.interf.HomePresenter.Companion.TYPE_LOAD_MORE
 import com.viger.myplayer.view.HomeView
 
-class HomePresenterImpl(var homeView:HomeView): HomePresenter, ResponseHandler<List<HomeItemBean>> {
+class HomePresenterImpl(var homeView:HomeView?): HomePresenter, ResponseHandler<List<HomeItemBean>> {
+
+    //解绑
+    fun destoryView() {
+        if(homeView != null) {
+            homeView = null
+        }
+    }
 
     override fun onError(type: Int, msg: String?) {
-        homeView.onError(msg)
+        homeView?.onError(msg)
     }
 
     override fun onSuccess(type: Int, result: List<HomeItemBean>) {
         when (type) {
-            HomePresenter.TYPE_INIT_OR_REFRESH->homeView.loadSuccess(result)
-            HomePresenter.TYPE_LOAD_MORE->homeView.loadMore(result)
+            HomePresenter.TYPE_INIT_OR_REFRESH->homeView?.loadSuccess(result)
+            HomePresenter.TYPE_LOAD_MORE->homeView?.loadMore(result)
         }
     }
 
