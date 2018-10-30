@@ -20,7 +20,6 @@ public class Test01 {
         digest.reset();
         digest.update(message.getBytes());
         byte[] bytes = digest.digest();
-
     }
 
     private void test() throws IOException {
@@ -45,7 +44,6 @@ public class Test01 {
             out.close();
             input.close();
         }
-
     }
 
     //获取传递的泛型类型
