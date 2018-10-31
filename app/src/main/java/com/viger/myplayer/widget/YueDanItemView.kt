@@ -2,7 +2,9 @@ package com.viger.myplayer.widget
 
 import android.content.Context
 import android.util.AttributeSet
+import android.view.View
 import android.widget.RelativeLayout
+import com.viger.myplayer.R
 
 class YueDanItemView : RelativeLayout {
 
@@ -11,7 +13,7 @@ class YueDanItemView : RelativeLayout {
     constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
 
     init {
-
+        View.inflate(context, R.layout.item_yuedan, this)
     }
 
 }
