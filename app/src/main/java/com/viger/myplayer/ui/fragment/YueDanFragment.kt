@@ -6,6 +6,9 @@ import android.view.View
 import android.widget.TextView
 import com.viger.myplayer.base.BaseFragment
 
+/**
+ * 悦单界面
+ */
 class YueDanFragment : BaseFragment() {
 
     override fun initView(): View? {
