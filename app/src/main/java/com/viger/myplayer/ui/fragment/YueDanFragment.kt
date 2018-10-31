@@ -3,6 +3,7 @@ package com.viger.myplayer.ui.fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.viger.myplayer.R
+import com.viger.myplayer.adapter.YueDanAdapter
 import com.viger.myplayer.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_list.*
 
@@ -11,13 +12,15 @@ import kotlinx.android.synthetic.main.fragment_list.*
  */
 class YueDanFragment : BaseFragment() {
 
+    val adapter by lazy { YueDanAdapter() }
+
     override fun initView(): View? {
         return View.inflate(context, R.layout.fragment_list, null)
     }
 
     override fun initListener() {
         recycleView.layoutManager = LinearLayoutManager(context)
-
+        recycleView.adapter = adapter
     }
 
 }
