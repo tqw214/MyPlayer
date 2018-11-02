@@ -6,6 +6,9 @@ import android.view.View
 import android.widget.RelativeLayout
 import com.viger.myplayer.R
 
+/**
+ * 自定义悦单item布局
+ */
 class YueDanItemView : RelativeLayout {
 
     constructor(context: Context?) : super(context)
