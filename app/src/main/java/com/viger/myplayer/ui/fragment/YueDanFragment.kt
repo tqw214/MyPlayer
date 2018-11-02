@@ -9,7 +9,6 @@ import kotlinx.android.synthetic.main.fragment_list.*
 
 /**
  * 悦单界面fragment
- *
  */
 class YueDanFragment : BaseFragment() {
 
