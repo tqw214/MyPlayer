@@ -27,7 +27,7 @@ class YueDanFragment : BaseFragment(), YueDanView {
     }
 
     override fun initData() {
-
+        presenter.loadDatas()
 
     }
 
