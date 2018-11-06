@@ -9,11 +9,15 @@ import com.viger.myplayer.view.YueDanView
 class YueDanPresenterImpl(var yueDanView : YueDanView) : YueDanPresenter, ResponseHandler<YueDanBean> {
 
     override fun onError(type: Int, msg: String?) {
-
+        yueDanView.onError(msg)
     }
 
     override fun onSuccess(type: Int, result: YueDanBean) {
-
+        if(type == YueDanPresenter.TYPE_INIT_OR_REFRESH) {
+            yueDanView.loadSuccess(result)
+        }else {
+            yueDanView.loadMore(result)
+        }
     }
 
     override fun loadDatas() {
