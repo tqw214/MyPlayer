@@ -27,7 +27,9 @@ class YueDanAdapter : RecyclerView.Adapter<YueDanAdapter.YueDanHolder>() {
     }
 
     override fun onBindViewHolder(p0: YueDanHolder, p1: Int) {
-
+        val data = list.get(p1)
+        val view = p0.itemView as YueDanItemView
+        view.setData(data)
     }
 
 
