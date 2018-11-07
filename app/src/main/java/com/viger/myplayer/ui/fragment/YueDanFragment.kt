@@ -29,7 +29,7 @@ class YueDanFragment : BaseFragment(), YueDanView {
     }
 
     override fun loadMore(response: YueDanBean) {
-
+        adapter.loadMore(response.playLists)
     }
 
     val adapter by lazy { YueDanAdapter() }
