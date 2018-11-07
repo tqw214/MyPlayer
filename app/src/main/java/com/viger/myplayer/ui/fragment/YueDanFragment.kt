@@ -54,7 +54,9 @@ class YueDanFragment : BaseFragment(), YueDanView {
                     val layoutManager = recyclerView.layoutManager
                     if(layoutManager is LinearLayoutManager) {
                         val lastPos = layoutManager.findLastVisibleItemPosition()
-
+                        if(lastPos == adapter.itemCount-1) {
+                            presenter.loadMore(adapter.itemCount-1)
+                        }
                     }
 
                 }

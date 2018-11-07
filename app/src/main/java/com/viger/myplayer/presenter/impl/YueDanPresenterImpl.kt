@@ -25,7 +25,7 @@ class YueDanPresenterImpl(var yueDanView : YueDanView) : YueDanPresenter, Respon
     }
 
     override fun loadMore(i: Int) {
-
+        YueDanRequest(YueDanPresenter.TYPE_LOAD_MORE, i, this).excute()
     }
 
 
