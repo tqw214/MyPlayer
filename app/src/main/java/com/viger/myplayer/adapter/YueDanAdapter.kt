@@ -19,6 +19,13 @@ class YueDanAdapter : RecyclerView.Adapter<YueDanAdapter.YueDanHolder>() {
         }
     }
 
+    fun loadMore(list: List<YueDanBean.PlayListsBean>?) {
+        list?.let {
+            this.list.addAll(list)
+            notifyDataSetChanged()
+        }
+    }
+
     override fun onCreateViewHolder(p0: ViewGroup, viewType: Int): YueDanHolder {
         if(viewType == 1) {
             return YueDanHolder(LoadMoreView(p0.context))
