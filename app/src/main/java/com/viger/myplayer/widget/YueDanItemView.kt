@@ -7,6 +7,7 @@ import android.widget.RelativeLayout
 import com.itheima.player.model.bean.YueDanBean
 import com.squareup.picasso.Picasso
 import com.viger.myplayer.R
+import jp.wasabeef.picasso.transformations.CropCircleTransformation
 import kotlinx.android.synthetic.main.item_yuedan.view.*
 
 /**
@@ -19,7 +20,8 @@ class YueDanItemView : RelativeLayout {
         author_name.text = data.creator?.nickName
         count.text = data.videoCount.toString()
         Picasso.with(context).load(data.playListPic).into(bg)
-        Picasso.with(context).load(data.creator?.largeAvatar).into(author_image)
+        Picasso.with(context).load(data.creator?.largeAvatar).transform(CropCircleTransformation())
+                .into(author_image)
     }
 
     constructor(context: Context?) : super(context)
