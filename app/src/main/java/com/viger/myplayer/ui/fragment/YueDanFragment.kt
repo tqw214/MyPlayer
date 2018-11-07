@@ -2,6 +2,7 @@ package com.viger.myplayer.ui.fragment
 
 import android.graphics.Color
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.View
 import com.itheima.player.model.bean.YueDanBean
 import com.viger.myplayer.R
@@ -45,6 +46,24 @@ class YueDanFragment : BaseFragment(), YueDanView {
         refreshLayout.setOnRefreshListener {
             presenter.loadDatas()
         }
+        recycleView.addOnScrollListener(object : RecyclerView.OnScrollListener(){
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                super.onScrollStateChanged(recyclerView, newState)
+                if(newState == RecyclerView.SCROLL_STATE_IDLE) {
+                    //空闲状态
+                    val layoutManager = recyclerView.layoutManager
+                    if(layoutManager is LinearLayoutManager) {
+                        val lastPos = layoutManager.findLastVisibleItemPosition()
+
+                    }
+
+                }
+            }
+
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+            }
+        })
     }
 
     override fun initData() {
