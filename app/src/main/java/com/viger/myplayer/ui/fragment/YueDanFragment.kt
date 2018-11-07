@@ -1,5 +1,6 @@
 package com.viger.myplayer.ui.fragment
 
+import android.graphics.Color
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.itheima.player.model.bean.YueDanBean
@@ -16,10 +17,13 @@ import kotlinx.android.synthetic.main.fragment_list.*
 class YueDanFragment : BaseFragment(), YueDanView {
 
     override fun onError(message: String?) {
+        refreshLayout.isRefreshing = false
         myToast("加载数据失败")
     }
 
     override fun loadSuccess(response: YueDanBean) {
+        myToast("加载数据成功")
+        refreshLayout.isRefreshing = false
         adapter.updateList(response.playLists)
     }
 
@@ -37,6 +41,10 @@ class YueDanFragment : BaseFragment(), YueDanView {
     override fun initListener() {
         recycleView.layoutManager = LinearLayoutManager(context)
         recycleView.adapter = adapter
+        refreshLayout.setColorSchemeColors(Color.RED, Color.YELLOW, Color.GREEN)
+        refreshLayout.setOnRefreshListener {
+            presenter.loadDatas()
+        }
     }
 
     override fun initData() {
