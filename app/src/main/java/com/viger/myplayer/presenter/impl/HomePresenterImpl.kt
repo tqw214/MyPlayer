@@ -1,17 +1,18 @@
 package com.viger.myplayer.presenter.impl
 
 import com.itheima.player.model.bean.HomeItemBean
+import com.viger.myplayer.base.BaseListPresenter
+import com.viger.myplayer.base.BaseListPresenter.Companion.TYPE_INIT_OR_REFRESH
+import com.viger.myplayer.base.BaseListPresenter.Companion.TYPE_LOAD_MORE
 import com.viger.myplayer.net.HomeRequest
 import com.viger.myplayer.net.ResponseHandler
 import com.viger.myplayer.presenter.interf.HomePresenter
-import com.viger.myplayer.presenter.interf.HomePresenter.Companion.TYPE_INIT_OR_REFRESH
-import com.viger.myplayer.presenter.interf.HomePresenter.Companion.TYPE_LOAD_MORE
 import com.viger.myplayer.view.HomeView
 
 class HomePresenterImpl(var homeView:HomeView?): HomePresenter, ResponseHandler<List<HomeItemBean>> {
 
     //解绑
-    fun destoryView() {
+    override fun destoryView() {
         if(homeView != null) {
             homeView = null
         }
@@ -23,8 +24,8 @@ class HomePresenterImpl(var homeView:HomeView?): HomePresenter, ResponseHandler<
 
     override fun onSuccess(type: Int, result: List<HomeItemBean>) {
         when (type) {
-            HomePresenter.TYPE_INIT_OR_REFRESH->homeView?.loadSuccess(result)
-            HomePresenter.TYPE_LOAD_MORE->homeView?.loadMore(result)
+            BaseListPresenter.TYPE_INIT_OR_REFRESH->homeView?.loadSuccess(result)
+            BaseListPresenter.TYPE_LOAD_MORE->homeView?.loadMore(result)
         }
     }
 
