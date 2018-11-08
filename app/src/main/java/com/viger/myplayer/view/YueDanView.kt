@@ -1,11 +1,9 @@
 package com.viger.myplayer.view
 
 import com.itheima.player.model.bean.YueDanBean
+import com.viger.myplayer.base.BaseView
 
-interface YueDanView {
+interface YueDanView: BaseView<YueDanBean> {
 
-    fun onError(message: String?)
-    fun loadSuccess(response: YueDanBean)
-    fun loadMore(response: YueDanBean)
 
 }
