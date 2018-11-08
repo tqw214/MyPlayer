@@ -13,7 +13,7 @@ import com.viger.myplayer.view.YueDanView
 import kotlinx.android.synthetic.main.fragment_list.*
 
 /**
- * 悦单界面fragment
+ * 悦单界面fragment_view
  */
 class YueDanFragment : BaseFragment(), YueDanView {
 
