@@ -6,6 +6,9 @@ import com.itheima.player.model.bean.HomeItemBean
 import com.viger.myplayer.base.BaseListAdapter
 import com.viger.myplayer.widget.HomeItemView
 
+/**
+ * HomeAdapter
+ */
 class HomeAdapter: BaseListAdapter<HomeItemBean, HomeItemView>() {
 
     override fun refreshItemView(itemView: HomeItemView, data: HomeItemBean) {
