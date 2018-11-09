@@ -4,22 +4,22 @@ import android.graphics.Color
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
-import com.itheima.player.model.bean.HomeItemBean
 import com.viger.myplayer.R
-import com.viger.myplayer.adapter.HomeAdapter
-import com.viger.myplayer.presenter.impl.HomePresenterImpl
-import com.viger.myplayer.view.HomeView
 import kotlinx.android.synthetic.main.fragment_home.*
 
-class BaseListFragment : BaseFragment(), HomeView {
+abstract class BaseListFragment<T,D,V:View> : BaseFragment(), BaseView<T> {
 
     val presenter by lazy {
-    HomePresenterImpl(this)
-}
+        getSpecialPresenter()
+    }
+
+    abstract fun getSpecialPresenter():BaseListPresenter
 
     val adapter by lazy {
-        HomeAdapter()
+        getSpecialAdapter()
     }
+
+    abstract fun getSpecialAdapter():BaseListAdapter<D,V>
 
     override fun initView(): View? {
         return View.inflate(context, R.layout.fragment_home, null)
@@ -63,14 +63,16 @@ class BaseListFragment : BaseFragment(), HomeView {
         myToast("加载数据失败")
     }
 
-    override fun loadMore(list: List<HomeItemBean>) {
+    override fun loadMore(list: T) {
         refreshLayout.isRefreshing = false
-        adapter.loadMore(list)
+        //adapter.loadMore(getList(list))
     }
 
-    override fun loadSuccess(list: List<HomeItemBean>) {
+    override fun loadSuccess(list: T) {
         refreshLayout.isRefreshing = false
-        adapter.updateList(list)
+        //adapter.updateList(getList(list))
     }
+
+    abstract fun getList(response:T):List<T>
 
 }
