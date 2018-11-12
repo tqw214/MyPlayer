@@ -77,4 +77,10 @@ class HomeFragment : BaseFragment(), HomeView {
         adapter.updateList(list)
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.destoryView()
+    }
+
+
 }
