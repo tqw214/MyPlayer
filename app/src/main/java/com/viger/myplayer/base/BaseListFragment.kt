@@ -7,6 +7,10 @@ import android.view.View
 import com.viger.myplayer.R
 import kotlinx.android.synthetic.main.fragment_home.*
 
+/**
+ * BaseListFragment
+ */
+
 abstract class BaseListFragment<T,D,V:View> : BaseFragment(), BaseView<T> {
 
     val presenter by lazy {
