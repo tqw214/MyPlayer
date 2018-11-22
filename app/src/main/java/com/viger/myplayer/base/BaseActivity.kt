@@ -6,6 +6,9 @@ import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.toast
 
+/**
+ * BaseActivity
+ */
 abstract class BaseActivity : AppCompatActivity(),AnkoLogger {
 
     override fun onCreate(savedInstanceState: Bundle?) {
