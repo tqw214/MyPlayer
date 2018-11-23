@@ -6,7 +6,7 @@ import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.toast
 
-/**
+/**test
  * BaseActivity
  */
 abstract class BaseActivity : AppCompatActivity(),AnkoLogger {
