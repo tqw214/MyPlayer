@@ -12,7 +12,10 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 
-//测试类
+/**
+ * 测试类
+ */
+
 public class Test01 {
 
     public void md5(String message) throws NoSuchAlgorithmException {
