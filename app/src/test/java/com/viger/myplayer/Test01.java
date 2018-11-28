@@ -59,4 +59,8 @@ public class Test01 {
         return clazz;
     }
 
+    public void test01() {
+
+    }
+
 }
