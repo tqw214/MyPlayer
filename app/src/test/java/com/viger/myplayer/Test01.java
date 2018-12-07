@@ -59,9 +59,6 @@ public class Test01 {
         return clazz;
     }
 
-    public void test01() {
-
-    }
 
     public void test02() {
 
