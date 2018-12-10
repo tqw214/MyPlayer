@@ -60,10 +60,10 @@ public class Test01 {
     }
 
     public void test001() {
-
+        System.out.print("");
     }
     public void test002() {
-
+        System.out.print("");
     }
 
 }
