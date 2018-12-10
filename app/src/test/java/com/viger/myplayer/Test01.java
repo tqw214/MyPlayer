@@ -59,4 +59,11 @@ public class Test01 {
         return clazz;
     }
 
+    public void test001() {
+
+    }
+    public void test002() {
+
+    }
+
 }
