@@ -23,8 +23,19 @@ public class MyArrayList<E> {
         size++;
     }
 
-    public void remove(E e) {
-
+    public E remove(int index) {
+        if(index < 0 || index >= size) {
+            throw new IllegalArgumentException("remove failed. index is iell");
+        }
+        E ret = ele[index];
+        for(int i = index+1;i<size;i++) {
+            ele[i-1] = ele[i];
+        }
+        size--;
+        if(size ==ele.length/4 && ele.length/2 != 0) {
+            resize(ele.length/2);
+        }
+        return ret;
     }
 
     private void resize(int newSize) {
