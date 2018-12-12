@@ -67,8 +67,5 @@ public class Test01 {
         System.out.print("");
     }
 
-    public void test003() {
-        System.out.println();
-    }
 
 }
