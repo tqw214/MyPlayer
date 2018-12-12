@@ -63,9 +63,6 @@ public class Test01 {
         System.out.print("");
     }
 
-    public void test002() {
-        System.out.print("");
-    }
 
 
 }
