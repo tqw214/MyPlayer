@@ -38,6 +38,14 @@ public class MyArrayList<E> {
         return ret;
     }
 
+    public E removeFirst() {
+        return remove(0);
+    }
+
+    public E removeLast() {
+        return remove(size-1);
+    }
+
     private void resize(int newSize) {
         E[] newAray = (E[])new Object[newSize];
         for(int i=0;i<ele.length;i++) {
