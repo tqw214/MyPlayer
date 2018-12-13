@@ -11,6 +11,12 @@ import java.lang.reflect.Type;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
+import java.util.concurrent.TimeUnit;
+
+import okhttp3.Call;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 /**
  * 测试类test
@@ -61,6 +67,15 @@ public class Test01 {
 
     public void test001() {
         System.out.print("");
+    }
+
+    public void okHttp() throws IOException {
+        OkHttpClient client = new OkHttpClient.Builder().
+                readTimeout(5, TimeUnit.SECONDS).build();
+        Request request = new Request.Builder().url("").get().build();
+        Call call = client.newCall(request);
+        Response response = call.execute();
+        response.body().string();
     }
 
 }
