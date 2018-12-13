@@ -54,4 +54,8 @@ public class MyArrayList<E> {
         ele = newAray;
     }
 
+    public void test() {
+
+    }
+
 }
