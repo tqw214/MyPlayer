@@ -21,6 +21,12 @@ android {
     }
 }
 
+def buildTime() {
+    def date = new Date()
+    def formattedDate = date.format("yyyyMMdd")
+    return formattedDate
+}
+
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
