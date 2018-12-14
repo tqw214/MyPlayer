@@ -15,6 +15,18 @@ buildscript {
     }
 }
 
+//自定义属性
+ext.num = 30
+ext {
+    phone = 123
+    address = ""
+}
+
+task customProperty {
+    println "num is: ${num}"
+    println "phone is ${phone}"
+}
+
 allprojects {
     repositories {
         google()
