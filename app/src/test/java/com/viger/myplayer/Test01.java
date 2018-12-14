@@ -66,7 +66,7 @@ public class Test01 {
     }
 
     public void test001() {
-        System.out.print("");
+        System.out.print("this is a test function");
     }
 
     public void okHttp() throws IOException {
