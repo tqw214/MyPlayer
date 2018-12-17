@@ -19,7 +19,4 @@ class ExampleInstrumentedTest {
         val appContext = InstrumentationRegistry.getTargetContext()
         assertEquals("com.viger.myplayer", appContext.packageName)
     }
-
-
-
 }
